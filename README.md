@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+Please see the presentation slides [here](https://docs.google.com/presentation/d/1j_-hN12xylHgbajVlik4GlEptAYNnkKNFGeBqykMPW4/edit#slide=id.p): 
+## Updating your apps to v4.0.0
+
+Angular team have begin work on an interactive [Angular Update Guide](https://angular-update-guide.firebaseapp.com/) if you would like to see more information about making any needed changes to your application. please visit here : https://angular-update-guide.firebaseapp.com/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
