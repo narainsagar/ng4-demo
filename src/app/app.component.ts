@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,39 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  userList: any[];
+
+  counter$: Observable<number>;
+  even$: Observable<boolean>;
+  people$: Observable<any>;
+  person$: Observable<any>;
+  data: any;
+
+  constructor() {
+      this.counter$ = Observable.interval(1000);
+
+      this.even$ = this.counter$.map(number => number % 2 === 0);
+
+      this.people$ = Observable.of([
+              {name: 'Joe'},
+              {name: 'Bob'},
+              {name: 'Susy'}
+          ]);
+
+      this.person$ = Observable.of({
+              name: 'Sally',
+              age: 30
+          })
+          .delay(3000);
+
+      this.data = this.getData();
+  }
+
+  getData() {
+      return new Promise(resolve => {
+          setTimeout(() => {
+              resolve('RECEIVED DATA!');
+          }, 5000);
+      });
+  }
 }
