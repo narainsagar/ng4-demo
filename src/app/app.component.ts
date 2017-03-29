@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,7 @@ export class AppComponent {
   person$: Observable<any>;
   data: any;
 
-  constructor() {
+  constructor(private router: Router) {
       this.counter$ = Observable.interval(1000);
 
       this.even$ = this.counter$.map(number => number % 2 === 0);
@@ -34,6 +36,10 @@ export class AppComponent {
           .delay(3000);
 
       this.data = this.getData();
+  }
+
+  checkCurrentRoute(routeStr: string) {
+      return this.router.url.split('/').indexOf(routeStr) !== -1;
   }
 
   getData() {
